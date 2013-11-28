@@ -1,0 +1,31 @@
+{
+  "name": "madlib-generic-cache",
+  "description": "A generic cache module for in memory caching of data. Expiration times are configurable",
+  "main": "lib/index.js",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mark Doeswijk",
+    "email": "mark.doeswijk@marviq.com",
+    "url": "https://github.com/Marviq"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "command -v grunt >/dev/null 2>&1 && grunt || { echo >&2 'Grunt is not installed'; }"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-coffee": "~0.6.0",
+    "grunt": "~0.4.1"
+  },
+  "dependencies": {
+    "madlib-console": "~0.1.0",
+    "madlib-object-utils": "~0.1.0",
+    "q": "~0.9.7",
+    "madlib-settings": "~0.1.2"
+  },
+  "licenses": [
+    {
+      "type": "BSD"
+    }
+  ]
+}
