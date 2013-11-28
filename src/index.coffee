@@ -31,14 +31,15 @@
         # Extending cache modules needs to provide a unique name
         # and the instance of the service to .call()
         #
-        constructor: ( cacheName, serviceHandler ) ->
+        constructor: ( cacheName, serviceHandler, serviceCallName = "call" ) ->
             # The private cache
             #
             @cache =
                 data:   {}
                 mtime:  {}
                 name:   cacheName
-            @service = serviceHandler
+            @service         = serviceHandler
+            @serviceCallName = serviceCallName
 
         clearCache: ( key ) ->
             if key? and @cache.data[ key ]
@@ -119,7 +120,7 @@
 
                 # Call the service to retrieve our data
                 #
-                @service.call( params )
+                @service[ @serviceCallName ]( params )
                 .then(
                     ( data ) =>
                         console.log( "[#{@cache.name}] Stored and returning data from service." )
