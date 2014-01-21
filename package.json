@@ -2,7 +2,7 @@
   "name": "madlib-generic-cache",
   "description": "A generic cache module for in memory caching of data. Expiration times are configurable",
   "main": "lib/index.js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": {
     "name": "Mark Doeswijk",
     "email": "mark.doeswijk@marviq.com",
