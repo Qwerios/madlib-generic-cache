@@ -4,34 +4,35 @@
             require "madLib-console"
             require "q"
             require "madLib-object-utils"
-            require "madlib-settings"
         )
     else if typeof define is "function" and define.amd
         define( [
             "madLib-console"
             "q"
             "madLib-object-utils"
-            "madlib-settings"
         ], factory )
 
-)( ( console, Q, objectUtils, settings ) ->
-
-    # Initialise settings
-    #
-    settings.init( "cacheModules",
-        expiration:
-            # Default expiration is 30 minutes
-            # Set to undefined to not expire
-            # CacheModules that have different expirations can be added here by their cacheName
-            #
-            "default": 1800000
-    )
+)( ( console, Q, objectUtils ) ->
 
     class CacheModule
-        # Extending cache modules needs to provide a unique name
-        # and the instance of the service to .call()
+        # Extending cache modules needs to provide:
+        # * madlib-settings instance for timeout values
+        # * a unique name
+        # * and the instance of the service to .call()
         #
-        constructor: ( cacheName, serviceHandler, serviceCallName = "call" ) ->
+        constructor: ( settings, cacheName, serviceHandler, serviceCallName = "call" ) ->
+            # Initialise settings
+            #
+            settings.init( "cacheModules",
+                expiration:
+                    # Default expiration is 30 minutes
+                    # Set to undefined to not expire
+                    # CacheModules that have different expirations can be added here by their cacheName
+                    #
+                    "default": 1800000
+            )
+            @settings = settings
+
             # The private cache
             #
             @cache =
@@ -91,7 +92,7 @@
             # named cache module.
             # A value of undefined means the cache never expires
             #
-            expirationSettings = settings.get( "cacheModules.expiration", {} )
+            expirationSettings = @settings.get( "cacheModules.expiration", {} )
             expirationTime     = objectUtils.getValue( @cache.name, expirationSettings, expirationSettings[ "default" ] )
             now                = @getNow()
 
