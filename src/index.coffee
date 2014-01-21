@@ -1,15 +1,15 @@
 ( ( factory ) ->
     if typeof exports is "object"
         module.exports = factory(
-            require "madLib-console"
+            require "madlib-console"
             require "q"
-            require "madLib-object-utils"
+            require "madlib-object-utils"
         )
     else if typeof define is "function" and define.amd
         define( [
-            "madLib-console"
+            "madlib-console"
             "q"
-            "madLib-object-utils"
+            "madlib-object-utils"
         ], factory )
 
 )( ( console, Q, objectUtils ) ->
