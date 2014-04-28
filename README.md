@@ -1,4 +1,8 @@
-# madlib-generic-cache [![Build Status](https://travis-ci.org/Qwerios/madlib-generic-cache.svg?branch=master)](https://travis-ci.org/Qwerios/madlib-generic-cache)
+# madlib-generic-cache
+[![Build Status](https://travis-ci.org/Qwerios/madlib-generic-cache.svg?branch=master)](https://travis-ci.org/Qwerios/madlib-generic-cache) [![NPM version](https://badge.fury.io/js/madlib-generic-cache.png)](http://badge.fury.io/js/madlib-generic-cache) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+[![Npm Downloads](https://nodei.co/npm/madlib-generic-cache.png?downloads=true&stars=true)](https://nodei.co/npm/madlib-generic-cache.png?downloads=true&stars=true)
+
 A generic cache module for in memory caching of data. Expiration times are configurable with madlib-settings. Basically it's a simple key/value store. Chances are you wan't to use [Backbone](http://backbonejs.org/) instead. Really...use Backbone models. This module is a bit of a relic from the past for us. It expects a service module to provide it's data (like Backbone fetch) with a single promise based 'call'.
 
 
