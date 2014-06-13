@@ -2,7 +2,7 @@
   "name": "madlib-generic-cache",
   "description": "A generic cache module for in memory caching of data.",
   "main": "lib/index.js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
     "name": "Mark Doeswijk",
     "email": "mdoeswijk@gmail.com",
@@ -16,8 +16,7 @@
     "test": "command -v grunt >/dev/null 2>&1 && grunt test || { echo >&2 'Grunt is not installed'; }",
     "prepublish": "command -v grunt >/dev/null 2>&1 && grunt || { echo >&2 'Grunt is not installed'; }"
   },
-  "devDependencies":
-  {
+  "devDependencies": {
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-coffee": "~0.10.1",
     "grunt": "~0.4.5",
@@ -26,14 +25,14 @@
     "grunt-mocha-test": "~0.11.0",
     "madlib-settings": "~0.1.5"
   },
-  "dependencies":
-  {
+  "dependencies": {
     "madlib-console": "~0.1.4",
     "madlib-object-utils": "~0.1.4",
     "q": "~1.0.1"
   },
   "licenses": [
-  {
-    "type": "BSD"
-  } ]
+    {
+      "type": "BSD"
+    }
+  ]
 }
